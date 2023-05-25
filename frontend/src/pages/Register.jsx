@@ -7,9 +7,10 @@ import axios from 'axios';
 const Register = () => {
   const navigate = useNavigate();
   // form handler
+  const host = 'http://localhost:4000';
   const onfinishHandler = async (values) => {
     try {
-      const res = await axios.post('/api/user/register', values);
+      const res = await axios.post(`${host}/api/user/register`, values);
       if (res.data.success) {
         message.success('Registration Successfull');
         navigate('/login');
