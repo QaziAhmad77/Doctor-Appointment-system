@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 import Spinner from './components/Spinner/Spinner';
 import { useSelector } from 'react-redux';
 import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes';
