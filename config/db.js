@@ -12,3 +12,14 @@ module.exports = {
     }
   },
 };
+
+// connectDB: () => {
+//   mongoose
+//     .connect(process.env.MONGO_URL)
+//     .then((result) => {
+//       console.log(`Connected successfully`);
+//     })
+//     .catch((error) => {
+//       console.log(`Error while connecting to database ${error}`);
+//     });
+// },
