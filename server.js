@@ -3,8 +3,8 @@ const colors = require('colors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const {connectDB} = require('./config/db');
-const userRouter = require("./routes/userRoute");
+const { connectDB } = require('./config/db');
+const userRouter = require('./routes/userRoutes');
 
 const app = express();
 app.use(express.json());
@@ -14,7 +14,9 @@ dotenv.config();
 connectDB();
 const port = process.env.PORT || 4000;
 
-app.use("/api/user",userRouter);
+app.use('/api/user', userRouter);
+app.use('/api/admin', require('./routes/adminRoutes'));
+app.use('/api/doctor', require('./routes/doctorRoutes'));
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`.yellow);
