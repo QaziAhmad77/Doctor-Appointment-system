@@ -31,12 +31,12 @@ export const adminMenu = [
   },
   {
     name: 'Doctors',
-    path: '/doctor',
+    path: '/admin/doctors',
     icon: 'fa-solid fa-user-doctor',
   },
   {
     name: 'Users',
-    path: '/users',
+    path: '/admin/users',
     icon: 'fa-solid fa-user',
   },
   {
