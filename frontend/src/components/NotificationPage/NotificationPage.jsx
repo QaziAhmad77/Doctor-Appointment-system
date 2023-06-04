@@ -71,6 +71,7 @@ const NotificationPage = () => {
             </h4>
           </div>
           {user?.notification.map((notificationMgs) => {
+            console.log(notificationMgs, 'this is my test');
             return (
               // eslint-disable-next-line
               <div className="card">
@@ -78,6 +79,10 @@ const NotificationPage = () => {
                   className="card-text"
                   onClick={() => {
                     navigate(notificationMgs.onClickPath);
+                    console.log(
+                      notificationMgs.onClick,
+                      'helloooooooooooooooooooooooooo'
+                    );
                   }}
                   style={{ cursor: 'pointer' }}
                 >

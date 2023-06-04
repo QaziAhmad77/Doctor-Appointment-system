@@ -20,6 +20,16 @@ const getDoctorInfoController = async (req, res) => {
 };
 const updateProfileController = async (req, res) => {
   try {
+    const { userId } = req.body;
+    console.log(userId);
+    const doctor = await doctorModel.findOneAndUpdate({ userId }, req.body, {
+      new: true,
+    });
+    res.status(201).send({
+      success: true,
+      message: 'Doctor Profile Updated',
+      data: doctor,
+    });
   } catch (error) {
     console.log(error);
     res.status(500).send({
@@ -29,6 +39,32 @@ const updateProfileController = async (req, res) => {
     });
   }
 };
+// const updateProfileController = async (req, res) => {
+//   try {
+//     const { userId, ...updateData } = req.body;
+//     console.log(userId);
+
+//     const doctor = await doctorModel.findOneAndUpdate(
+//       { userId: userId }, // Use 'userId' as the query condition
+//       updateData, // Use 'updateData' to specify the fields to be updated
+//       { new: true } // Set the 'new' option to return the updated document
+//     );
+
+//     console.log(doctor);
+//     res.status(201).send({
+//       success: true,
+//       message: 'Doctor Profile Updated',
+//       data: doctor,
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).send({
+//       success: false,
+//       message: 'Error while updating doctor details',
+//       error,
+//     });
+//   }
+// };
 module.exports = {
   getDoctorInfoController,
   updateProfileController,
