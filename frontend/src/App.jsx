@@ -7,6 +7,12 @@ import Spinner from './components/Spinner/Spinner';
 import { useSelector } from 'react-redux';
 import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes';
 import PublicRoutes from './components/PublicRoutes/PublicRoutes';
+import ApplyDoctor from './pages/ApplyDoctor/ApplyDoctor';
+import NotificationPage from './components/NotificationPage/NotificationPage';
+import Users from './pages/admin/Users';
+import Doctors from './pages/admin/Doctors';
+import Profile from './pages/doctor/Profile';
+import BookingPage from './pages/BookingPage/BookingPage';
 function App() {
   const { loading } = useSelector((state) => state.alerts);
   return (
@@ -20,6 +26,54 @@ function App() {
             element={
               <ProtectedRoutes>
                 <Home />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/apply-doctor"
+            element={
+              <ProtectedRoutes>
+                <ApplyDoctor />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/admin/users"
+            element={
+              <ProtectedRoutes>
+                <Users />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/admin/doctors"
+            element={
+              <ProtectedRoutes>
+                <Doctors />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/doctor/profile/:id"
+            element={
+              <ProtectedRoutes>
+                <Profile />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/doctor/book-appointment/:doctorId"
+            element={
+              <ProtectedRoutes>
+                <BookingPage />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/notification"
+            element={
+              <ProtectedRoutes>
+                <NotificationPage />
               </ProtectedRoutes>
             }
           />
