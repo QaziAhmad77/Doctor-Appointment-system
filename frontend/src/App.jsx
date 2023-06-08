@@ -13,6 +13,8 @@ import Users from './pages/admin/Users';
 import Doctors from './pages/admin/Doctors';
 import Profile from './pages/doctor/Profile';
 import BookingPage from './pages/BookingPage/BookingPage';
+import Appointments from './pages/Appointments/Appointments';
+import DoctorAppointmets from './pages/doctor/DoctorAppointmets';
 function App() {
   const { loading } = useSelector((state) => state.alerts);
   return (
@@ -91,6 +93,22 @@ function App() {
               <PublicRoutes>
                 <Register />
               </PublicRoutes>
+            }
+          />
+          <Route
+            path="/appointments"
+            element={
+              <ProtectedRoutes>
+                <Appointments />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/doctor-appointments"
+            element={
+              <ProtectedRoutes>
+                <DoctorAppointmets />
+              </ProtectedRoutes>
             }
           />
         </Routes>
