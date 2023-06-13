@@ -6,7 +6,6 @@ const {
   getDoctorById,
   doctorAppointments,
   updateStatusController,
-  // deleteTable,
 } = require('../controllers/doctorController');
 const router = express.Router();
 //POST SINGLE DOC INFO
@@ -19,5 +18,6 @@ router.post('/getDoctorById', authMiddleware, getDoctorById);
 router.get('/doctor-appointments', authMiddleware, doctorAppointments);
 //POST update Status
 router.post('/update-status', authMiddleware, updateStatusController);
-// router.delete('/delete-table', deleteTable);
+
+
 module.exports = router;

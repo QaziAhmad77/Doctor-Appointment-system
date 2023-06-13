@@ -4,7 +4,8 @@ const {
   getAllUsersController,
   getAllDoctorsController,
   changeAccountStatusController,
-  // deleteTable
+  deleteTable,
+  deleteSpecificUser
 } = require('../controllers/adminController');
 const router = express.Router();
 
@@ -16,4 +17,5 @@ router.post(
   changeAccountStatusController
 );
 // router.delete('/delete-table', deleteTable);
+// router.delete("/delete-specific-user",deleteSpecificUser);
 module.exports = router;
