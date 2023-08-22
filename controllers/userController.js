@@ -66,6 +66,7 @@ const loginController = async (req, res) => {
       .send({ message: `Error in login Controller ${error.message}` });
   }
 };
+
 const authController = async (req, res) => {
   try {
     const { userId } = req.body;
