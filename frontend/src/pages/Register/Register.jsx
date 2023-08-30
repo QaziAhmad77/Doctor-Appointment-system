@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form, Input, message } from 'antd';
 import './Register.scss';
 import { Link, useNavigate } from 'react-router-dom';
