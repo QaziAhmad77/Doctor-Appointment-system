@@ -23,7 +23,7 @@ const updateProfileController = async (req, res) => {
   try {
     const { userId } = req.body;
     const doctor = await doctorModel.findOneAndUpdate({ userId }, req.body, {
-      new: true,
+      new: true, // will show updated document
     });
     res.status(201).send({
       success: true,
